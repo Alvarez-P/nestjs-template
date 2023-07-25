@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🎨 Linting code...'
+
+pnpm lint ||
+( 
+  echo "❌🎨 Linting failed, commit aborted.";
+  false;
+)
